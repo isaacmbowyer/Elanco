@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;600;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/fce9e25ee3.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../styles.css">
+  <title>Confirm Rebate</title>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-sm navbar-dark mb-3">
+    <div class="container">
+      <a class="navbar-brand" href="#"><img src="../Images/logo.png"></a>      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navContent">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link"href="../personaldetails.html">Rebate Form</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"href="#">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"href="#">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../Login/loginpage.html" id="user-log">Log In</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    
+   <!-- HEADER -->
+    <header class="text-center mb-4">
+       <h1>Claim your rebate</h1>
+       <p id="header-text">Confirm your rebate below</p>
+    </header>
+    
+    <!-- PROGRESS BAR -->
+    <div class="progressbar mb-5">
+      <div class="section">
+        <div class="section-circle active">
+          <a href="../personaldetails.html"><i class="far fa-user"></i></a>
+          </div>
+          <p class="section-name">Personal Details</p>
+        </div>
+        <div class="section">
+          <div class="section-circle active">
+            <a href="../addressdetails.html"><i class="fas fa-home"></i></a>
+          </div>
+          <p class="section-name">Address Details</p>
+        </div>
+        <div class="section">
+          <div class="section-circle active">
+            <a href="../petdetails.html"><i class="fas fa-paw"></i></a>
+          </div>
+          <p class="section-name">Pet Details</p>
+        </div>
+        <div class="section">
+          <div class="section-circle active">
+            <a href="index.html"><i class="fab fa-wpforms"></i></a>
+          </div>
+          <p class="section-name">Rebate Details</p>
+        </div>
+        <div class="section">
+          <div class="section-circle">
+            <a href="#"><i class="fas fa-check"></i></a>
+          </div>
+          <p class="section-name">Review and Submit</p>
+        </div>
+        <div class="status-progress complete" style="width: 60%;"></div>
+        <div class="status-progress"></div>
+      </div>
+    </div>
+    
+    <!-- REBATES -->
+    <div class="rebates">
+      <div class="rebate mb-2" id="rebate1">
+        <div class="rebate-header"></div>
+        <div class="rebate-content m-1">
+          <div class="rebate-section">
+            <p>Rebate Details</p>
+            <p id="rebate-text"></p>
+          </div>
+          <div class="purchase-section">
+            <p>Purchase Dates</p>
+            <p id="purchase-text"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="rebate mb-2" id="rebate2" style="display: none;">
+        <div class="rebate-header"></div>
+        <div class="rebate-content m-1">
+          <div class="rebate-section">
+            <p>Rebate Details</p>
+            <p id="rebate-text"></p>
+          </div>
+          <div class="purchase-section">
+            <p>Purchase Dates</p>
+            <p id="purchase-text"></p>
+          </div>
+        </div>
+      </div>
+      <p id="rebate-add">Have another rebate? <a href="index.html" id="add-rebate" style="font-weight: bold; text-decoration: underline;">Click here</a></p>
+      
+      <a href="rebateevidence.html" class="btn btn-primary buttons mb-2">Continue</button>
+      <a href="index.html" class="btn btn-secondary buttons mb-2">Back</a>
+
+     
+    </div>
+    
+
+  </div>
+
+
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+ <script>
+    var offer1, offer2;
+
+    function Rebate(offerC, rebateD, purchaseD){
+      this.offerCode = offerC;
+      this.rDetails = rebateD;
+      this.purchaseDate = purchaseD;
+    }
+
+    Rebate.prototype.title = function(){
+      return this.offerCode
+    };
+    Rebate.prototype.detail = function(){
+      return this.rDetails
+    };
+    Rebate.prototype.pDate = function(){
+      return this.purchaseDate
+    };
+
+    offer1 = new Rebate(localStorage.getItem('offerCode1'), localStorage.getItem('offerText1'), localStorage.getItem('purchaseDate1'));
+    document.querySelector('#rebate1 .rebate-header').innerHTML = "Offer Code: " + offer1.title();
+    document.querySelector('#rebate1 #rebate-text').innerHTML =  offer1.detail();
+    document.querySelector('#rebate1 #purchase-text').innerHTML = offer1.pDate();
+
+    var offerCode2 = localStorage.getItem('offerCode2');
+    if(offerCode2 != null){ 
+      offer2 = new Rebate(localStorage.getItem('offerCode2'), localStorage.getItem('offerText2'), localStorage.getItem('purchaseDate2'));
+      document.querySelector('#rebate2 .rebate-header').innerHTML = "Offer Code: " + offer2.title();
+      document.querySelector('#rebate2 #rebate-text').innerHTML =  offer2.detail();
+      document.querySelector('#rebate2 #purchase-text').innerHTML = offer2.pDate();
+      document.querySelector('#rebate2').style.display = 'block';
+      document.getElementById('rebate-add').style.display = 'none';
+    }
+
+    document.getElementById('add-rebate').addEventListener('click', event => {
+      localStorage.setItem('addrebate2', true);
+      return true;
+    })
+    
+</script>
+<script src="../Login/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;600;900&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/fce9e25ee3.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <link rel="stylesheet" href="../styles.css">
+  <title>Review and Submit</title>
+</head>
+<body>
+ 
+
+<!-- Modal -->
+<div class="modal fade" id="successModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="sucessModalLabel">You have claimed your rebate</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe src="https://lottiefiles.com/iframe/782-check-mark-success" id="success-frame" scrolling="no"></iframe>
+        <p><a href="create.html" style="font-weight: bold; text-decoration: underline;">Click here</a> to save your details for a quicker process next time</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-expand-sm navbar-dark mb-3">
+  <div class="container">
+    <a class="navbar-brand" href="#"><img src="../Images/logo.png"></a>      
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link"href="#">Rebate Form</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"href="#">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"href="#">FAQ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Login/loginpage.html" id="user-log">Log In</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+ 
+<div class="container">
+
+  <!-- HEADER -->
+  <header class="text-center mb-4">
+    <h1>Claim your rebate</h1>
+    <p>Provide your pet details below</p>
+  </header>
+
+<!-- PROGRESS BAR -->
+<div class="progressbar mb-5">
+  <div class="section">
+    <div class="section-circle active">
+      <a href="../personaldetails.html"><i class="far fa-user"></i></a>
+    </div>
+    <p class="section-name">Personal Details</p>
+  </div>
+  <div class="section">
+    <div class="section-circle active">
+      <a href="../addressdetails.html"><i class="fas fa-home"></i></a>
+    </div>
+    <p class="section-name">Address Details</p>
+  </div>
+  <div class="section">
+    <div class="section-circle active">
+      <a href="../petdetails.html"><i class="fas fa-paw"></i></a>
+    </div>
+    <p class="section-name">Pet Details</p>
+  </div>
+  <div class="section">
+    <div class="section-circle active">
+      <a href="../Rebate/index.html"><i class="fab fa-wpforms"></i></a>
+    </div>
+    <p class="section-name">Rebate Details</p>
+  </div>
+  <div class="section">
+    <div class="section-circle active ">
+      <a href=""><i class="fas fa-check"></i></a>
+    </div>
+    <p class="section-name">Review and Submit</p>
+  </div>
+  <div class="status-progress complete" style="width: 70%;"></div>
+  <div class="status-progress"></div>
+ </div>
+  
+  <div class="infomation">
+    <div class="personal">
+      <p class="info-header">Personal Details:</p>
+      <div class="content">
+        <p id="info-name"></p>
+        <p id="info-email"></p>
+        <p id="info-phone"></p>
+        <a href="link"></a>
+      </div>
+    </div>
+    <div class="address">
+      <p class="info-header">Address Details:</p>
+      <div class="content">
+        <p id="info-address-1"></p>
+        <p id="info-address-2"></p>
+        <p id="city"></p>
+        <p id="area"></p>
+        <p id="country"></p>
+      </div>
+    </div>
+    <div class="pet">
+      <p class="info-header">Pet Details:</p>
+      <div class="content">
+        <p id="pet-name"></p>
+        <p id="pet-date"></p>
+        <p id="pet-breed"></p>
+        <p id="pet-image"></p>
+      </div>
+    </div>
+    <div class="rebate-info">
+      <p class="info-header">Rebate(s):</p>
+        <div class="rebates">
+          <div class="rebate mb-2" id="rebate1">
+            <div id="header1" class="rebate-header"></div>
+            <div class="rebate-content m-1">
+              <div class="rebate-section">
+                <p>Rebate Details</p>
+                <p id="rebate-text"></p>
+              </div>
+              <div class="purchase-section">
+                <p>Purchase Dates</p>
+                <p id="purchase-text"></p>
+              </div>
+            </div>
+          </div>
+    
+          <div class="rebate mb-2" id="rebate2" style="display: none;">
+            <div id="header2" class="rebate-header"></div>
+            <div class="rebate-content m-1">
+              <div class="rebate-section">
+                <p>Rebate Details</p>
+                <p id="rebate-text2"></p>
+              </div>
+              <div class="purchase-section">
+                <p>Purchase Dates</p>
+                <p id="purchase-text2"></p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="clinic">
+      <p class="info-header">Clinic Details:</p>
+      <div class="content">
+        <p id="clinic-name"></p>
+        <p id="clinic-name2"></p>
+      </div>
+    </div>
+    <div class="collection">
+      <p class="info-header">Rebate Collection:</p>
+      <div class="content">
+        <p id="rebate-collection"></p>
+      </div>
+    </div>
+  </div>
+
+  <button type="button" class="btn btn-primary form-control mb-2" data-bs-toggle="modal" data-bs-target="#successModal">
+    Confirm and Send Rebate
+  </button>
+
+  <a href="../Rebate/rebatereceive.html" class="btn btn-secondary form-control mb-2">Back</a>
+  
+  
+
+</div>
+
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+  <script src="../Login/login.js"></script>
+  <script>
+
+
+    // display all user fields 
+    document.querySelector('#info-name').innerHTML = localStorage.getItem('fullname');
+    document.querySelector('#info-email').innerHTML = localStorage.getItem('email');
+    
+    var phone = localStorage.getItem('phonenumber')
+
+    if(phone != null){
+      document.querySelector('#info-phone').innerHTML = localStorage.getItem('phonenumber');
+    }
+ 
+    document.querySelector('#info-address-1').innerHTML = localStorage.getItem('address1') + ",";
+    document.querySelector('#info-address-2').innerHTML = localStorage.getItem('address2');
+    document.querySelector('#city').innerHTML = localStorage.getItem('city');
+    document.querySelector('#area').innerHTML = localStorage.getItem('province/state/county') + " " + localStorage.getItem('code');;
+    document.querySelector('#country').innerHTML = localStorage.getItem('country');
+ 
+    document.querySelector('#pet-name').innerHTML = localStorage.getItem('petname');
+    document.querySelector('#pet-date').innerHTML = localStorage.getItem('petdate');
+    document.querySelector('#pet-breed').innerHTML = localStorage.getItem('petbreed');
+    document.querySelector('#pet-image').innerHTML = localStorage.getItem('petimage');
+ 
+    document.querySelector('#header1').innerHTML = localStorage.getItem('offerCode1');
+    document.querySelector('#rebate-text').innerHTML = localStorage.getItem('offerText1');
+    document.querySelector('#purchase-text').innerHTML = localStorage.getItem('purchaseDate1');
+    document.querySelector('#header2').innerHTML = localStorage.getItem('offerCode2');
+    document.querySelector('#rebate-text2').innerHTML = localStorage.getItem('offerText2');
+    document.querySelector('#purchase-text2').innerHTML = localStorage.getItem('purchaseDate2');;
+    
+    document.querySelector('#clinic-name').innerHTML = localStorage.getItem('clinicname') + " " + localStorage.getItem('cliniccode');
+    
+    let clinicName2 = localStorage.getItem('clinicname2')
+
+    if(clinicName2 != null){
+      document.querySelector('#clinic-name2').innerHTML = clinicName2 +  " " + localStorage.getItem('cliniccode2');;
+    }
+  
+ 
+    document.querySelector('#rebate-collection').innerHTML = localStorage.getItem('receive');
+  </script>
+
+</body>
+</html>

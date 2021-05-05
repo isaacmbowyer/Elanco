@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Rebate Details</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;600;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/fce9e25ee3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm navbar-dark mb-3">
+      <div class="container">
+        <a class="navbar-brand" href="#"><img src="../Images/logo.png"></a>      
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navContent">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link"href="../personaldetails.html">Rebate Form</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"href="#">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"href="#">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="user-log" href="../Login/loginpage.html">Log In</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <header class="text-center mb-4">
+      <h1>Claim your rebate</h1>
+      <p>Provide your rebate details below</p>
+    </header>
+    
+    <!-- PROGRESS BAR -->
+    <div class="progressbar mb-5">
+      <div class="section">
+        <div class="section-circle active">
+          <a href="../personaldetails.html"><i class="far fa-user"></i></a>
+        </div>
+        <p class="section-name">Personal Details</p>
+      </div>
+      <div class="section">
+        <div class="section-circle active">
+          <a href="../addressdetails.html"><i class="fas fa-home"></i></a>
+        </div>
+        <p class="section-name">Address Details</p>
+      </div>
+      <div class="section">
+        <div class="section-circle active">
+          <a href="../petdetails.html"><i class="fas fa-paw"></i></a>
+        </div>
+        <p class="section-name">Pet Details</p>
+      </div>
+      <div class="section">
+        <div class="section-circle active">
+          <a href="#"><i class="fab fa-wpforms"></i></a>
+        </div>
+        <p class="section-name">Rebate Details</p>
+      </div>
+      <div class="section">
+        <div class="section-circle">
+          <a href="#"><i class="fas fa-check"></i></a>
+        </div>
+        <p class="section-name">Review and Submit</p>
+      </div>
+      <div class="status-progress complete" style="width: 58%;"></div>
+      <div class="status-progress"></div>
+    </div>
+
+    <form action="rebateconfirm.html" id="form1" class="active-form">
+
+        <div class="field mb-2">
+          <input type="text" name="offercode" class="required offercode" >
+          <label for="offercode">
+            <span>Offer Code<sup>*</sup></span>
+          </label>    
+        </div>
+        <span class="mb-3" id="OCE1">Offer Code is required</span>
+  
+        <div class="field mb-2 date">
+          <input type="date" name="purchasedate" class="required purchasedate">
+          <label for="purchasedate">
+            <span>Purchase Date<sup>*</sup></span>
+          </label>    
+        </div>
+        <span class="mb-3">Purchase Date is required</span>
+        
+        <div class="field">
+          <button type="submit" class="btn btn-primary form-control">Continue</button>
+        </div>
+  
+        <div class="field">
+          <a href="rebatelist.html" class="btn btn-primary form-control">Search Rebate</a>
+        </div>
+  
+        <div class="field">
+          <a href="../petdetails.html" class="btn btn-secondary form-control">Back</a>
+        </div>
+
+    </form>
+
+    <form action="rebateconfirm.html" style="display: none;" id="form2">
+
+      <div class="field mb-2">
+        <input type="text" name="offercode2" class="required offercode">
+        <label for="offercode2">
+          <span>Second Offer Code<sup>*</sup></span>
+        </label>    
+      </div>
+      <span class="mb-3" id="OCE2">Second Offer Code is required</span>
+
+      <div class="field mb-2 date">
+        <input type="date" name="purchasedate2" class="required purchasedate">
+        <label for="purchasedate2">
+          <span>Second Purchase Date<sup>*</sup></span>
+        </label>    
+      </div>
+      <span class="mb-3">Second Purchase Date is required</span>
+
+      <div class="field">
+        <button type="submit" class="btn btn-primary form-control">Continue</button>
+      </div>
+
+      <div class="field">
+        <a href="rebatelist.html" class="btn btn-primary form-control">Search Rebate</a>
+      </div>
+
+      <div class="field">
+        <a href="rebateconfirm.html" class="btn btn-secondary form-control">Back</a>
+      </div>
+
+      
+
+    </form>
+
+
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+  <script>
+    var form = document.getElementById('form1');
+    var offerCodeList = ["C6917H12", "C5441H08", "D0340Y19", "D2007G53"];
+    var rebateDescriptions = ["Get $15 when you purchase this product", "Get $25 when you purchase this product", "Get $20 when you purchase this product", "Get $35 when you purchase this product"]
+    var valid = false;
+    var addRebate2 = localStorage.getItem('addrebate2');
+    var OfferCodeError = document.getElementById('OCE1');
+    
+    if(addRebate2 ==  true){
+      // show rebate2 input fields
+      form.style.display = 'none';
+      form.classList.remove('active-form');
+      form = document.getElementById('form2');
+      form.classList.add('active-form');
+      form.style.display = 'flex';
+      OfferCodeError = document.getElementById('OCE2'); 
+
+    } 
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      // make sure each input has a value
+      var error = false; 
+
+      document.querySelectorAll('.active-form input').forEach(input => {
+      var  value = input.value; 
+      if(value.length == 0){
+        // show error message to the span 
+        input.parentElement.nextElementSibling.classList.add('error');
+        error = true;
+      }
+
+      var rebateDescription;
+      var offerCode = document.querySelector('.active-form .offercode').value;
+        for(var i = 0; i < offerCodeList.length; i++){
+          rebateDescription = rebateDescriptions[i];
+
+          if(offerCode == offerCodeList[i]){
+            // save the data 
+            if(addRebate2 != null){
+              localStorage.setItem('offerCode2', offerCode);
+              localStorage.setItem('purchaseDate2', document.querySelector('.active-form .purchasedate').value)
+              localStorage.setItem('offerText2', rebateDescription);
+
+            } 
+            else{
+              localStorage.setItem('offerCode1', offerCode);
+              localStorage.setItem('purchaseDate1', document.querySelector('.active-form .purchasedate').value)
+              localStorage.setItem('offerText1', rebateDescription);
+            }
+            if(!error){
+              // if the input fields have a value then submit
+              if(localStorage.getItem('page') != document.querySelector('title').innerHTML || localStorage.getItem('page') == null){
+                // save the current submitted page 
+                localStorage.setItem('page', document.querySelector('title').innerHTML);
+              }
+              form.submit();
+            }
+        
+          }
+          else{
+            OfferCodeError.innerHTML = "Invalid Offer Code";
+            OfferCodeError.style.visibility = 'visible';
+          }
+        }
+      })
+    })
+
+  
+  </script>
+   <script src="../Login/login.js"></script>
+  </body>
+</html>

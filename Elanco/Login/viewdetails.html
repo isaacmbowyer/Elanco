@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;600;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/fce9e25ee3.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../styles.css">
+  <title>View Details</title>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-sm navbar-dark mb-3">
+    <div class="container">
+      <a class="navbar-brand" href="#"><img src="../Images/logo.png"></a>      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navContent">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link"href="#">Rebate Form</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"href="#">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"href="#">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="loginpage.html" id="user-log">Log Out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <header class="text-center mb-4">
+        <h1>View Details</h1>
+        <p>These are your saved details</p>
+     </header>
+
+    <div class="infomation">
+      <div class="personal">
+        <p class="info-header">Personal Details:</p>
+        <div class="content">
+          <p id="info-name"></p>
+          <p id="info-email"></p>
+          <p id="info-phone"></p>
+        </div>
+      </div>
+      <div class="address">
+        <p class="info-header">Address Details:</p>
+        <div class="content">
+          <p id="info-address-1"></p>
+          <p id="info-address-2"></p>
+          <p id="city"></p>
+          <p id="area"></p>
+          <p id="country"></p>
+        </div>
+      </div>
+      <div class="pet">
+        <p class="info-header">Pet Details:</p>
+        <div class="content">
+          <p id="pet-name"></p>
+          <p id="pet-date"></p>
+          <p id="pet-breed"></p>
+          <p id="pet-image"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="login.js"></script>
+  <script>
+    // display all user fields 
+    document.querySelector('#info-name').innerHTML = localStorage.getItem('fullname');
+    document.querySelector('#info-email').innerHTML = localStorage.getItem('email');
+    document.querySelector('#info-phone').innerHTML = localStorage.getItem('phone');
+ 
+    document.querySelector('#info-address-1').innerHTML = localStorage.getItem('address1') + ",";
+    document.querySelector('#info-address-2').innerHTML = localStorage.getItem('address2');
+    document.querySelector('#city').innerHTML = localStorage.getItem('city');
+    document.querySelector('#area').innerHTML = localStorage.getItem('province/state/county') + " " + localStorage.getItem('code');;
+    document.querySelector('#country').innerHTML = localStorage.getItem('country');
+ 
+    document.querySelector('#pet-name').innerHTML = localStorage.getItem('petname');
+    document.querySelector('#pet-date').innerHTML = localStorage.getItem('petdate');
+    document.querySelector('#pet-breed').innerHTML = localStorage.getItem('petbreed');
+    document.querySelector('#pet-image').innerHTML = localStorage.getItem('petimage');
+  </script>
+
+</body>
+</html>

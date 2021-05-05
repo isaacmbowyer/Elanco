@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;600;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/fce9e25ee3.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../styles.css">
+  <title>Rebate Evidence</title>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-sm navbar-dark mb-3">
+    <div class="container">
+      <a class="navbar-brand" href="#"><img src="../Images/logo.png"></a>      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navContent">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link"href="../personaldetails.html">Rebate Form</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"href="#">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"href="#">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../Login/loginpage.html" id="user-log">Log In</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    
+   <!-- HEADER -->
+    <header class="text-center mb-4">
+       <h1>Claim your rebate</h1>
+       <p>Provide your evidence below</p>
+    </header>
+    
+    <!-- PROGRESS BAR -->
+    <div class="progressbar mb-5">
+      <div class="section">
+        <div class="section-circle active">
+          <a href="../personaldetails.html"><i class="far fa-user"></i></a>
+        </div>
+          <p class="section-name">Personal Details</p>
+        </div>
+        <div class="section">
+          <div class="section-circle active">
+            <a href="../addressdetails.html"><i class="fas fa-home"></i></a>
+          </div>
+          <p class="section-name">Address Details</p>
+        </div>
+        <div class="section">
+          <div class="section-circle active">
+            <a href="../petdetails.html"><i class="fas fa-paw"></i></a>
+          </div>
+          <p class="section-name">Pet Details</p>
+        </div>
+        <div class="section">
+          <div class="section-circle active">
+            <a href="index.html"><i class="fab fa-wpforms"></i></a>
+          </div>
+          <p class="section-name">Rebate Details</p>
+        </div>
+        <div class="section">
+          <div class="section-circle">
+            <a href="#"><i class="fas fa-check"></i></a>
+          </div>
+          <p class="section-name">Review and Submit</p>
+        </div>
+        <div class="status-progress complete" style="width: 63%;"></div>
+        <div class="status-progress"></div>
+      </div>
+
+    <form action="clinicdetails.html">
+
+      <p style="width: 70%; font-size: 14px;">Provide evidence of the veterinary invoice that includes the purchase of product(s) that qualify for the rebate(s)</p>
+      <div class='column mb-4'>
+        <div class="file-container" style="margin-right: 200px;">
+          <input id="submitFile" type="file" name="submitFile" hidden>
+          <i class="fas fa-upload"></i>
+          <button id="custom-file" type="button" >Select Image</button>
+        </div>
+        <div class="image-preview" id="imagePreview">
+          <img src="" alt="Image Preview" class="imageToPreview">
+          <span id="rebate-image1" class="image-preview-default-text">First Product Image</span>
+        </div>
+        <span id="error1" style="color: red; display: none;">Please select an Image</span>
+      </div>
+  
+      <div id='secondFile' class='column mb-4' style="display: none">
+        <div class="file-container" style="margin-right: 200px;">
+          <input id="submitFile2" type="file" name="submitFile2" hidden>
+          <i class="fas fa-upload"></i>
+          <button id="custom-file2" type="button" >Select Image</button>
+        </div>
+        <div class="image-preview" id="imagePreview2">
+          <img src="" alt="Image Preview" class="imageToPreview2">
+          <span class="image-preview-default-text2">Second Product Image</span>
+        </div>
+        <span id="error2" style="color: red; display: none;">Please select an Image</span>
+      </div>
+
+      <div class="checkbox-container mb-3">
+        <input type="checkbox" id="add">
+        <label for="add">Add Another Image</label>
+      </div>
+
+      <button type="submit" class="btn btn-primary mb-2 buttons2">Continue</button>
+      <a href="rebateconfirm.html" class="btn btn-secondary mb-2 buttons2">Back</a>
+    </form>
+
+  </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script src="../Login/login.js"></script>
+    <script>
+      const inpFile = document.getElementById("submitFile");
+      const inpFile2 = document.getElementById("submitFile2");
+      const previewContainer = document.getElementById("imagePreview");
+      const previewImage = previewContainer.querySelector(".imageToPreview");
+      const previewDefaultText = previewContainer.querySelector(".image-preview-default-text");
+      const previewContainer2 = document.getElementById("imagePreview2");
+      const previewImage2 = previewContainer2.querySelector(".imageToPreview2");
+      const previewDefaultText2 = previewContainer2.querySelector(".image-preview-default-text2");
+      let file1, file2;
+      var addImage = false;
+      document.getElementById('add').addEventListener('change', event => {
+        file = document.getElementById('secondFile');
+        if(event.target.checked){
+          // add another image to add 
+          file.style.display = 'block';
+          addImage = true;
+        }
+        else{
+          // remove image 
+          file.style.display = 'none';
+          addImage = false;
+        }
+      })
+      
+        
+      document.querySelector('#custom-file').addEventListener('click', event => {
+        document.querySelector('#submitFile').click();
+      });
+
+      document.querySelector('#custom-file2').addEventListener('click', event => {
+        document.querySelector('#submitFile2').click();
+      });
+
+
+      inpFile.addEventListener("change", function(){
+        file1 = this.files[0];
+        if (file1){
+          const reader = new FileReader();
+
+          previewDefaultText.style.display = "none";
+          previewImage.style.display = "block";
+          reader.addEventListener("load", function(){
+            previewImage.setAttribute("src", this.result);
+          });
+          reader.readAsDataURL(file1);
+        }else{
+          previewDefaultText.style.display = null;
+          previewImage.style.display = null;
+          previewImage.setAttribute("src", "");
+        }
+        
+      });
+
+      inpFile2.addEventListener("change", function(){
+        file2 = this.files[0];
+        if (file2){
+          const reader2 = new FileReader();
+          console.warn('entered file');
+          previewDefaultText2.style.display = "none";
+          previewImage2.style.display = "block";
+          reader2.addEventListener("load", function(){
+          previewImage2.setAttribute("src", this.result);
+          });
+          reader2.readAsDataURL(file2);
+        }else{
+          previewDefaultText2.style.display = null;
+          previewImage2.style.display = null;
+          previewImage2.setAttribute("src", "");
+        }
+        
+      });
+
+      document.querySelector('form').addEventListener('submit', event => {
+        event.preventDefault();
+        let errorDetected = false;
+        if(addImage){
+          // user wanted to add another image 
+          if(file2 == null){
+            document.querySelector('#error2').style.display = 'block';
+            errorDetected = true;
+          }
+        }
+
+        if(file1 == null){
+          document.querySelector('#error1').style.display = 'block';
+          errorDetected = true;
+        }
+      
+        if(!errorDetected){
+          // submit form
+          if(addImage){
+            localStorage.setItem('image2', file2.name);
+          }
+          localStorage.setItem('image1', file1.name);
+          document.querySelector('form').submit();
+        }
+      })
+      
+      
+
+
+    </script>
+  </body>
+</html>
