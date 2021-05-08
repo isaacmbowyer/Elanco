@@ -209,8 +209,9 @@
       document.querySelector('#rebate4 #rebate-text').innerHTML =  offer4.detail();
       document.querySelector('#rebate4 #purchase-text').innerHTML = offer4.pDate();
 
-      var addRebate2 = localStorage.getItem('addrebate2')
+      var addRebate2 = localStorage.getItem('addrebate2');
       if(addRebate2 != null){
+        var code = localStorage.getItem('offerCode1');
         if(code == 'C6917H12'){
           document.getElementById('rebate1').style.display = 'none';
         }
