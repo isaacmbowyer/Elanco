@@ -1,6 +1,5 @@
 # Elanco
-Re-design form for Elanco. 
-
+Re-design form for Elanco by Group 9. 
 
 Isaac did Personal, Pet and Address details and the progress bar sytles.
 Joe did Review and Submit and Create Account.
