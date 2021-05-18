@@ -7,4 +7,3 @@ Alisha did Login System and Veiw Details.
 Jacob did Rebate Process.
 All Team members worked on styles
 
-Isaac Uploaded their work on github (as evidenced) however other team members did not upload their work on github and sent code via zip files. 
